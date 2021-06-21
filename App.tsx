@@ -251,10 +251,7 @@ export default function Home() {
       </Pressable>
       <Pressable
         style={styles.themeSwithcer}
-        onPress={() => {
-          setDarkTheme(!darkTheme);
-          setInputFocus(true);
-        }}>
+        onPress={() => setDarkTheme(!darkTheme)}>
         <Text style={styles.themeSwithcerbutton}>{darkTheme ? 'L' : 'D'}</Text>
       </Pressable>
 
