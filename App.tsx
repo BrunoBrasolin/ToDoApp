@@ -123,7 +123,9 @@ export default function Home() {
     modalContent: {
       width: '100%',
       alignItems: 'center',
-      backgroundColor: 'white',
+      backgroundColor: darkTheme
+        ? theme.dark.backgroundColor
+        : theme.light.backgroundColor,
       borderRadius: 8,
       paddingHorizontal: 20,
       paddingVertical: 40,
@@ -152,6 +154,7 @@ export default function Home() {
       fontWeight: '700',
       fontSize: 24,
       letterSpacing: 1.5,
+      color: darkTheme ? theme.dark.color : theme.light.color,
     },
     modalInput: {
       borderWidth: 1,
@@ -160,6 +163,7 @@ export default function Home() {
       borderRadius: 4,
       paddingLeft: 10,
       borderColor: '#c3c3c3',
+      color: darkTheme ? theme.dark.color : theme.light.color,
     },
     buttonSubmit: {
       alignSelf: 'flex-end',
@@ -270,6 +274,9 @@ export default function Home() {
               maxLength={35}
               placeholder="Título do item"
               autoFocus={inputFocus}
+              placeholderTextColor={
+                darkTheme ? theme.dark.color : theme.light.color
+              }
               style={styles.modalInput}
             />
             <Pressable
